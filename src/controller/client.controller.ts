@@ -14,13 +14,13 @@ export class ClientController extends GenericController<Client, ClientRepository
 
     getAll(){
         return this.repository.find({
-            relations: ['projects']
+            relations: ['projects', 'projects.issues']
         })
     }
 
     getOne(id: number){
         return this.repository.findOne(id, {
-            relations: ['projects']
+            relations: ['projects', 'projects.issues']
         })
     }
 
